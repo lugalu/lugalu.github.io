@@ -1,3 +1,62 @@
 ---
 ---
 @import "main";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #414141;
+}
+
+.navigation-style{
+	background-color: #000000;
+	overflow: hidden;
+	color: #f2f2f2;
+	position: fixed;
+	left: 0;
+  	right: 0;
+  	z-index: 30;
+  	border-bottom: 2px solid #FF7A00;
+  	border-color: FF7A00;
+  	padding: 16px;
+  	font-size: 18px;    
+  	width: 100%;
+
+}
+
+.navigation-style nav{
+	padding-right: 16px;
+	float: right;
+}
+
+.navigation-button, .active{
+	color: #f2f2f2;
+	text-decoration: none;
+	font-size: 18px;
+	padding-right: 16px;
+	
+
+}
+
+.active, .navigation-title{
+	color: #FF7A00;
+}
+
+.navigation-button:hover,.active:hover{
+	text-decoration: underline;
+}
+
+.navigation-title{
+	float: left;
+	padding-left: 16px;
+	text-decoration: none;
+}
+
+.navigation-spacer{
+	height: 3.75em;
+}
+
