@@ -72,34 +72,34 @@ html,body {
 		float: right;
 		cursor: pointer;
 	  display: block;
-	  width: 3.25rem;	
+	  width: 1em;	
 	  height: 1em;
+	  padding-right: 16px;
 	}
 
 	.showMore span{
 		display: block;
 		background-color: #FF7A00;
-	  height: 2px;
-	  position: relative;
-	  transform-origin: center;
-	  transition-duration: 86ms;
-	  transition-property: background-color,opacity,transform;
-	  transition-timing-function: ease-out;
-	  width: 16px;
+	  height: 5px;
+	  position: sticky;
+	  width: 24px;
 	  border-radius: 2px;
 	}
 
-.showMore span:nth-child(1) {
-		top: 4px;
-
-}
+	.showMore span:nth-child(1) {
+		top: 28%;
+	}
 
 	.showMore span:nth-child(2) {
-		top: 8px;
-		width: 8px;
-		transform: translateX(8px);
-}
-.showMore span:nth-child(3) {
-		top: 12px;
-}
+		top: 50%;
+	}
+
+	.showMore span:nth-child(3) {
+			top: 100%;
+	}
+
+	.navigation-style{
+		font-size: 32px;
+	}
+
 }
