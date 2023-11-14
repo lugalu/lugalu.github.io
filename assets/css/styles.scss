@@ -18,14 +18,13 @@ html,body {
 	color: #f2f2f2;
 	position: fixed;
 	left: 0;
-  	right: 0;
-  	z-index: 30;
-  	border-bottom: 2px solid #FF7A00;
-  	border-color: FF7A00;
-  	padding: 16px;
-  	font-size: 18px;    
-  	width: 100%;
-
+	right: 0;
+	z-index: 30;
+	border-bottom: 2px solid #FF7A00;
+	border-color: FF7A00;
+	padding: 16px;
+	font-size: 18px;    
+	width: 100%;
 }
 
 .navigation-style nav{
@@ -60,3 +59,47 @@ html,body {
 	height: 3.75em;
 }
 
+.showMore{
+	display: none;
+}
+
+@media screen and (max-width: 1280px){
+	.navigation-style nav, .active{
+		display: none;
+	}
+
+	.showMore{
+		float: right;
+		cursor: pointer;
+	  display: block;
+	  width: 3.25rem;	
+	  height: 1em;
+	}
+
+	.showMore span{
+		display: block;
+		background-color: #FF7A00;
+	  height: 2px;
+	  position: relative;
+	  transform-origin: center;
+	  transition-duration: 86ms;
+	  transition-property: background-color,opacity,transform;
+	  transition-timing-function: ease-out;
+	  width: 16px;
+	  border-radius: 2px;
+	}
+
+.showMore span:nth-child(1) {
+		top: 4px;
+
+}
+
+	.showMore span:nth-child(2) {
+		top: 8px;
+		width: 8px;
+		transform: translateX(8px);
+}
+.showMore span:nth-child(3) {
+		top: 12px;
+}
+}
