@@ -1,8 +1,9 @@
 <div class="navigation-style">
 
-<a href= "{{ site.data.navigation[0].link}}" class="navigation-title">Lugalu</a>
-
-  <nav>
+<div>
+  <a href= "{{ site.data.navigation[0].link}}" class="navigation-title">Lugalu</a>
+</div>
+  <nav class="navigation-aligment">
     {% for item in site.data.navigation %}
     <a href="{{ item.link }}"
       {% if page.url == item.link %} 
@@ -13,8 +14,6 @@
     {{ item.name }}
     </a>
     {% endfor %}
-    
-
 
   </nav>
 
@@ -23,5 +22,6 @@
       <span></span>
       <span></span>
     </div>
+
 </div>
 <div class="navigation-spacer"></div>

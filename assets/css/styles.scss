@@ -27,9 +27,13 @@ html,body {
 	width: 100%;
 }
 
+.navigation-aligment{
+	float: right;
+}
+
 .navigation-style nav{
 	padding-right: 16px;
-	float: right;
+
 }
 
 .navigation-button, .active{
@@ -53,17 +57,14 @@ html,body {
 	float: left;
 	padding-left: 16px;
 	text-decoration: none;
-}
-
-.navigation-spacer{
-	height: 3.75em;
+	margin: 0px;
 }
 
 .showMore{
 	display: none;
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1280px) {
 	.navigation-style nav, .active{
 		display: none;
 	}
@@ -71,10 +72,11 @@ html,body {
 	.showMore{
 		float: right;
 		cursor: pointer;
-	  display: block;
+	  display: inline-block;
 	  width: 1em;	
 	  height: 1em;
 	  padding-right: 16px;
+	  margin-right: 16px;
 	}
 
 	.showMore span{
@@ -84,22 +86,12 @@ html,body {
 	  position: sticky;
 	  width: 24px;
 	  border-radius: 2px;
+	  margin: 5px;
 	}
 
-	.showMore span:nth-child(1) {
-		top: 28%;
-	}
-
-	.showMore span:nth-child(2) {
-		top: 50%;
-	}
-
-	.showMore span:nth-child(3) {
-			top: 100%;
-	}
-
-	.navigation-style{
+	.navigation-title{
 		font-size: 32px;
+		line-height: 32px;
 	}
 
 }
