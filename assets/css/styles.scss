@@ -3,6 +3,7 @@
 @import "main";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 
+
 html,body {
   margin: 0;
   padding: 0;
@@ -10,6 +11,8 @@ html,body {
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: #414141;
+  --bs-body-bg: black;
+  color: #FFF;
 }
 
 body{
@@ -17,8 +20,8 @@ body{
   width: 100vw;
   height: 100vh;
   min-width: 300px;
-  background-color: #414141;
 }
+
 
 .navbar{
 	background-color: #000000;
@@ -92,25 +95,6 @@ body{
 	  margin: 5px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
