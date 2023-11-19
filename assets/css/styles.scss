@@ -3,6 +3,16 @@
 @import "main";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
 
 html,body {
   margin: 0;
@@ -83,7 +93,12 @@ h3{}
 	display: none;
 }
 
-@media screen and (max-width: 1280px) {
+
+.p-3 {
+  padding: calc($spacer * 3) !important;
+}
+
+@media screen and (max-width: 800px) {
 	.navbar nav, .active{
 		display: none;
 	}
@@ -106,16 +121,20 @@ h3{}
 	}
 
 	.main-text{
-		font-size: 36px;
+		font-size: 24px;
 	}
 
 	h2 {
-		font-size: 16px;
+		font-size: 12px;
 	}
 
 	.dropdown a:hover{
 		 background-color: #000000;
 		 text-decoration: underline;
+	}
+
+	.p-3 {
+ 	 padding: $spacer !important;
 	}
 }
 
