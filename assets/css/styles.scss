@@ -30,9 +30,13 @@ body{
 	color: #FF7A00;
 }
 
-.main-text{
+h1 {
 	font-size: 200px;
 }
+
+h2{}
+
+h3{}
 
 .navbar{
 	background-color: #000000;
@@ -44,13 +48,10 @@ body{
 	font-size: 24px;    
 }
 
-.navigation-aligment{
-	float: right;
-}
+
 
 .navigation-style nav{
 	padding-right: 16px;
-
 }
 
 .navigation-button, .active{
@@ -65,6 +66,7 @@ body{
 .active, .navigation-title{
 	color: #FF7A00;
 }
+
 
 .navigation-button:hover,.active:hover{
 	text-decoration: underline;
@@ -87,11 +89,8 @@ body{
 	}
 
 	.showMore{
-		float: right;
 		cursor: pointer;
 	  display: inline-block;
-	  width: 1em;	
-	  height: 1em;
 	  padding-right: 16px;
 	  margin-right: 16px;
 	}
@@ -103,7 +102,20 @@ body{
 	  position: sticky;
 	  width: 24px;
 	  border-radius: 2px;
-	  margin: 5px;
+	  margin: 4px;
+	}
+
+	.main-text{
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 16px;
+	}
+
+	.dropdown a:hover{
+		 background-color: #000000;
+		 text-decoration: underline;
 	}
 }
 
