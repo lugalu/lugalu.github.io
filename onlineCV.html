@@ -1,3 +1,28 @@
 ---
 title: Online CV
 ---
+
+
+<div class="mt-3 text-center">
+	<select class="selectpicker" data-width="fit" id="languageSelector" onchange = "updateLink(this.selectedIndex)" >
+    	<option value=0 selected=true>English</option>
+  		<option value=1>Portugues</option>
+	</select>
+</div>
+
+<div class="embed-responsive embed-responsive-16by9 text-center w-100 h-100 mt-3">
+	<iframe id="CVFrame" class="embed-responsive-item w-50 h-100 " src="https://drive.google.com/file/d/1xdvx7HDjoZLhBkz4XoPfFLAPls8LzaW2/preview" allowfullscreen></iframe>
+</div>
+
+
+<script type="text/javascript">
+	function updateLink(index) {
+		const driveLinks = [ 
+			"https://drive.google.com/file/d/1xdvx7HDjoZLhBkz4XoPfFLAPls8LzaW2/preview",
+			"https://drive.google.com/file/d/1saBpOPDIG7TLdUxBbnbCY-qgrHNB5Sww/preview"
+			];
+
+		var frame = document.getElementById("CVFrame");
+		frame.src = driveLinks[index];
+	}
+</script>
