@@ -3,6 +3,7 @@
 @import "main";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 
+$orangeColor: #FF7A00;
 $spacer: 1rem;
 $spacers: (
   0: 0,
@@ -36,7 +37,7 @@ body{
 }
 
 .orange-font-color{
-	color: #FF7A00;
+	color: $orangeColor;
 }
 
 h1 {
@@ -51,7 +52,7 @@ h3{}
 	background-color: #000000;
 	padding-top: 15px;
   padding-bottom: 15px;
- 	border-bottom: 2px solid #FF7A00;
+ 	border-bottom: 2px solid $orangeColor;
   border-radius: 0;
   margin-bottom: 0;
 	font-size: 24px;    
@@ -73,7 +74,7 @@ h3{}
 }
 
 .active, .navigation-title{
-	color: #FF7A00;
+	color: $orangeColor;
 }
 
 
@@ -90,6 +91,12 @@ h3{}
 
 .showMore{
 	display: none;
+}
+
+
+.section-spacer{
+	height: 5px;
+	background-color: $orangeColor;
 }
 
 
@@ -112,7 +119,7 @@ h3{}
 
 	.showMore span{
 		display: block;
-		background-color: #FF7A00;
+		background-color: $orangeColor;
 	  height: 5px;
 	  position: sticky;
 	  width: 24px;
@@ -139,28 +146,42 @@ h3{}
 }
 
 
+.paralelogram-right {
+    width: calc(50% + 50px); 
+    	background: #555;
+    clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 100%);
+    padding:0px;
+    margin:0px;
+    outline-left: 100px solid $orangeColor;
+
+}
 
 
+.paralelogram-left {
+    width: calc(50% + 50px); 
+    background: #555;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    padding:0px;
+    margin:0px;
+    outline-left: 100px solid $orangeColor;
+
+}
 
 
+section{
+	display: flex;
+    width: 100%;
+    height: 400px;
+    padding:0px;
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.textArea{
+	width: calc(50% );
+    height: 100%;
+    padding: 2% 5%;
+    text-align: center;
+}
 
 
 
