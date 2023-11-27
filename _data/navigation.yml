@@ -1,10 +1,33 @@
 - name: Hub
   link: /
+  text: ""
+
 - name: About Me
   link: /about.html 
+  text: You can get to know a little bit more about me. My Interests, journey, who, and what I am, among other things. Generally, this section is an expanded version of a resume, with more personal experiences and tastes included.
+  imgPath: assets/images/iPhoneCloseup.jpg
+  imgAlt: Iphone 8 close up on the charging port and microphone
+  imageSrc: "https://www.pexels.com/photo/space-gray-iphone-8-56904/"
+  imageAuthor: "Torsten Dettlaff"
+
 - name: Blog
   link: /blog.html
+  text: This is where I post about whatever I want from my current project, updates on old ones, or simply want to talk about a topic.
+  imgPath: assets/images/PenAndNotebooks.jpg
+  imgAlt: Closeup Photo of Black Smartphone Near Black and Grey Pencil on Black Spiral Notebook
+  imageSrc: "https://www.pexels.com/photo/closeup-photo-of-black-smartphone-near-black-and-grey-pencil-on-black-spiral-notebook-768474/"
+  imageAuthor: "Jess Bailey Designs"
+
 - name: Projects
   link: /projects.html
-- name: OCV
+  text: My ever growing list of projects both professional, educational, and hobbist.
+  imgPath: assets/images/iPhoneCloseup.jpg
+  imgAlt: blabla
+
+- name: Resume
   link: /onlineCV.html
+  text: Check my Online resume, if I'm looking for a job, and what I'm searching at the moment here.
+  imgPath: assets/images/PaperEnvelope.jpg
+  imgAlt: Bond Paper inside a Brown Envelope
+  imageSrc: "https://www.pexels.com/photo/bond-paper-inside-a-brown-envelope-9869076/"
+  imageAuthor: "Brando.ltd"

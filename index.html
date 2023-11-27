@@ -17,76 +17,36 @@ github: "https://github.com/lugalu"
 	</div>
 </div>
 
-{% include spacer.html %}
-<section style="box-sizing: border-box;">
-	
-    <div class= "textArea">
-		<h2>ALO</h2>
-        <p style="text-align: justify">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        
-        <a>ALO</a>
-        
-	</div>
 
-    <img class="paralelogram-right" src= "https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-          
+{% for pages in site.data.navigation offset: 1 %}
+	{% include spacer.html %}
+
+<section >
+	{% assign remainder = forloop.index | modulo: 2 %}
+	{% if remainder != 0 %}
+	    <div class= "textArea">
+			<h2 class="orange-font-color">{{pages.name}}</h2>
+	        <p style="text-align: center">{{pages.text}}</p>
+	        <a class="btn btn-outline-orange" href={{pages.link}}>{{pages.name}}</a>
+		</div>
+
+	    <img class="paralelogram-right" src= {{pages.imgPath}} alt= "{{pages.imgAlt}}" title="{{pages.imgAlt}}">
+	         
+	{% else %}
+	    <img class="paralelogram-left" src= {{pages.imgPath}} alt= "{{pages.imgAlt}}" title="{{pages.imgAlt}}">
+		
+	    <div class= "textArea">
+			<h2 class="orange-font-color">{{pages.name}}</h2>
+	        <p style="text-align: center">{{pages.text}}</p>
+	        <a class="btn btn-outline-orange" href={{pages.link}}>{{pages.name}}</a>
+		</div>
+
+	{% endif %}
 </section>
 
-{% include spacer.html %}
-
-<section style="box-sizing: border-box;">
+	{% if index.last == false %}
+		{% include spacer.html %}
+	{% endif %}
 	
-
-    <img class="paralelogram-left" src= "https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-	
-    <div class= "textArea">
-		<h2>ALO</h2>
-        <p style="text-align: justify">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        
-        <a>ALO</a>
-        
-	</div>
-
-          
-</section>
-
-{% include spacer.html %}
-
-<section style="box-sizing: border-box;">
-	
-    <div class= "textArea">
-		<h2>ALO</h2>
-        <p style="text-align: justify">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        
-        <a>ALO</a>
-        
-	</div>
-
-    <img class="paralelogram-right" src= "https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-          
-</section>
-
-{% include spacer.html %}
-
-<section style="box-sizing: border-box;">
-	
-    <div class= "textArea">
-		<h2>ALO</h2>
-        <p style="text-align: justify">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        
-        <a>ALO</a>
-        
-	</div>
-
-    <img class="paralelogram-right" src= "https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-          
-</section>
+{% endfor %}
 
