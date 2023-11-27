@@ -120,7 +120,7 @@ h3{}
     clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 100%);
     padding:0px;
     margin:0px;
-    object-fit: cover;
+    object-fit: fit;
 }
 
 
@@ -130,7 +130,7 @@ h3{}
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
     padding:0px;
     margin:0px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 

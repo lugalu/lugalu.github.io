@@ -21,8 +21,8 @@
 - name: Projects
   link: /projects.html
   text: My ever growing list of projects both professional, educational, and hobbist.
-  imgPath: assets/images/iPhoneCloseup.jpg
-  imgAlt: blabla
+  imgPath: assets/images/Projects.png
+  imgAlt: Six App icons skewed at about 30 degrees the background is gray and has a vignette applied over everything.
 
 - name: Resume
   link: /onlineCV.html
