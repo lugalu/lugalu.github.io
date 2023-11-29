@@ -11,7 +11,19 @@ title: About
 	}
 
 
+	@media screen and (max-width: 800px){
+		.w-25{
+			width: 75% !important;
+		}
 
+		.w-50{
+			width: 100% !important;
+		}
+
+		.w-75{
+			width: 100% !important;
+		}
+	}
 
 </style>
 
