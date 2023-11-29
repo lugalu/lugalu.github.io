@@ -36,7 +36,7 @@ Let's start with my professional and educational achievements and then delve int
 Okay, educational and professional taken out of the way, let's talk about myself.
 
 <br>
-### **Gaming**.  
+### **Gaming**  
 I've been loving it since I can remember, and the sole reason I do this whole thing today is thanks to them.
  When I was a young child, I would think about how letters and numbers became the video games that I'd play every day or how a disc could be read, and this led me to keep an interest in tech for my whole life, starting with robotics, then later realizing I preferred programming for its versatility.
 I didn't know if I  would like programming until I started university, and I loved it. Nowadays, the games I love the most are Soulslikes, Minecraft, and chill and laid-back.  
