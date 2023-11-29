@@ -15,7 +15,7 @@ title: About
 
 </style>
 
-{% include spacer.html %}
+
 <div class="container justify-content-center mt-5 w-75 text-sm text-start fs-5 lh-base" markdown = "1">
 ## **Hey ho!** 
 Welcome to my About Me page,  
