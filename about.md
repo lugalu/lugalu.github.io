@@ -60,7 +60,7 @@ I, unfortunately, have only one gunpla kit: Barbatos from Iron-Blooded Orphans, 
 
 The kit itself has some fitting problems, but it looks really cool. My next One will probably be the MG Zeta if I can get a job before it's gone from the store.  
 
-<img  class= "img-fluid w-25 d-block mx-auto py-2" alt="Bandai promotional flyer for Barbatos Gundam kit." title= "Bandai promotional close up flyer for Zeta Gundam kit." src="assets/images/Zeta.jpg" />  
+<img  class= "img-fluid w-25 d-block mx-auto py-2" alt="Bandai promotional flyer for Zeta Gundam kit." title= "Bandai promotional close up flyer for Zeta Gundam kit." src="assets/images/zeta.jpg" />  
 <br>
 ### **Anime**
 I cited anime before, and, yes, I like to watch them, but I'm not too much of a season guy I tend to watch at max 4-to 5 shows per season, and most are older because my watchlist is pretty big, and I prefer to play or do my projects more than watch, that's one the reasons I like animes more, and despise series/movies, since the daily watch time is around 23 minutes way less than any other media, removing youtube from the equation.  
