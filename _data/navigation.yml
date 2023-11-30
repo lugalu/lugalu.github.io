@@ -3,7 +3,7 @@
   text: ""
 
 - name: About Me
-  link: /about.html 
+  link: /about 
   text: You can get to know a little bit more about me. My Interests, journey, who, and what I am, among other things. Generally, this section is an expanded version of a resume, with more personal experiences and tastes included.
   imgPath: assets/images/iPhoneCloseup.jpg
   imgAlt: Iphone 8 close up on the charging port and microphone
@@ -11,7 +11,7 @@
   imageAuthor: "Torsten Dettlaff"
 
 - name: Blog
-  link: /blog.html
+  link: /blog
   text: This is where I post about whatever I want from my current project, updates on old ones, or simply want to talk about a topic.
   imgPath: assets/images/PenAndNotebooks.jpg
   imgAlt: Closeup Photo of Black Smartphone Near Black and Grey Pencil on Black Spiral Notebook
@@ -19,13 +19,13 @@
   imageAuthor: "Jess Bailey Designs"
 
 - name: Projects
-  link: /projects.html
+  link: /projects
   text: My ever growing list of projects both professional, educational, and hobbist.
   imgPath: assets/images/Projects.png
   imgAlt: Six App icons skewed at about 30 degrees the background is gray and has a vignette applied over everything.
 
 - name: Resume
-  link: /onlineCV.html
+  link: /onlineCV
   text: Check my Online resume, if I'm looking for a job, and what I'm searching at the moment here.
   imgPath: assets/images/PaperEnvelope.jpg
   imgAlt: Bond Paper inside a Brown Envelope
