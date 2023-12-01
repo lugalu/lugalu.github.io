@@ -2,7 +2,7 @@
 layout: default
 title: Blog
 ---
-
+<script type="text/javascript" src= "/assets/js/blog-search.js"></script>
 <style>
 
 	.post-main-style{
@@ -14,11 +14,37 @@ title: Blog
 		background-color: #303030;
 	}
 
+	input[type="search"], textarea{
+		background-color: #303030;
+		color: #FFFFFF;
+	}
+
+	.btn-tag{
+		background-color: #303030;
+		color: #FFF;
+		border: 1px solid #FFF;
+	}
+
+
 </style>
 
-
 <div class="container justify-content-center mt-5 w-75 text-sm text-start fs-5 lh-base">
-	<h2 class="orange-font-color mb-3"> Blog </h2>
+	<div class="row align-items-center">
+		<h2 class="orange-font-color mb-3 col-md-4"> Blog </h2>
+
+		<div class="col-md-8  align-middle text-end ">
+
+			<button class="btn px-3 py-1 mx-1 btn-sm btn-tag">Project</button>
+			<button class="btn px-3 py-1 mx-1 btn-sm btn-tag">Update</button>
+			<button class="btn px-3 py-1 mx-1 btn-sm btn-tag ">Other</button>
+	  		<input class="me-2 px-2 rounded-pill ml-1" type="search" placeholder="Post Title" aria-label="Search" id="blogSearch" name="blogSearch">
+
+		</div>
+		
+
+	</div>
+
+
 
 	{% include spacer.html %}
 
