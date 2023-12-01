@@ -3,18 +3,53 @@ layout: default
 title: Blog
 ---
 
-<h1> Latest Post</h1>
+<style>
 
-<ul>
+	.post-main-style{
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.post-main-style:hover{
+		background-color: #303030;
+	}
+
+</style>
+
+
+<div class="container justify-content-center mt-5 w-75 text-sm text-start fs-5 lh-base">
+	<h2 class="orange-font-color mb-3"> Blog </h2>
+
+	{% include spacer.html %}
+
 	{% for post in site.posts %}
-		<li>
-			<h2>
-				<a href="{{ post.url }}">
-					{{ post.title }}
-				</a>
-			</h2>
-			{{ post.excerpt }}
-		</li>
+		<div class="container">
+			<a class= "row post-main-style p-3" href="{{ post.url }}">
+
+				<div class="col-md-4">
+					<img src="{{post.image | default: "assets/images/mainImage.jpg"}}" class="img-fluid rounded-1">
+				</div>
+					
+					<div class="col-md-8">
+						<h2 class="orange-font-color">
+							
+								{{ post.title }}
+							
+						</h2>
+					<p markdown="1">{{ post.excerpt }}</p>
+
+					</div>
+			</a>
+
+		</div>
+
+		{% if forloop.last == false %}
+			{% include spacer.html %}
+		{% endif %}
+
+	{% else %}
+		<h3 class="mt-3"> No Posts Available Right Now :(</h3>
 	{% endfor %}
 
-</ul>
+</div>
+

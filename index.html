@@ -21,7 +21,7 @@ github: "https://github.com/lugalu"
 {% for pages in site.data.navigation offset: 1 %}
 	{% include spacer.html %}
 
-<section >
+<section>
 	{% assign remainder = forloop.index | modulo: 2 %}
 	{% if remainder != 0 %}
 	    <div class= "textArea">
