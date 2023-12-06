@@ -2,6 +2,32 @@
 title: Projects
 ---
 
+<style type="text/css">
+  
+.active{
+padding-right: 0px;
+font-size: 18px;
+}
+@media screen and (min-width: 800px){
+  .carousel-inner{
+    display: flex;
+    overflow:  scroll;
+    scroll-behavior: smooth;
+  }
+
+  .carousel-item{
+    display: block;
+    margin: 0;
+    flex: 0 0 calc(100%/3);
+    
+  }
+  .active{
+    padding-right: 0;
+  }
+}
+
+</style>
+
 
 <div class="container mt-5">
   <div class="row align-items-center">
@@ -10,20 +36,45 @@ title: Projects
 
   {% include spacer.html %}
   <h3 class="orange-font-color mb-3 col-md-4"> Professional </h3>
+  {% assign project_posts = site.posts | where: "tag", "project" %}
 
-  <div class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-inner">
-         <div class="col-md-3">
-            <div class="card">
-                <div class="card-img">
-                    <img src="/assets/images/zeta.jpg" class="">
-                </div>
-                <div class="card-img-overlay">Slide 1</div>
+  <div id= "ProfessionalCarousel"class="carousel slide">
+    <div class="carousel-inner" id="carouselInner">
+      {% for post in project_posts %}
+        <div 
+        {% if forloop.first %}
+          class="carousel-item active"
+        {% else %}
+          class = "carousel-item"
+        {% endif %}
+        id = "carouselItem"
+        >
+            <div class="col mx-1">
+              <div class="card">
+                <img src="/assets/images/zeta.jpg" class="img-fluid h-100 card-img-top">
+                <div class="card-body">
+                  <p class="orange-font-color fs-1">alo</p>
+                </div>            
+              </div>
             </div>
-      </div>
-    </div>
+        </div>
+      {% endfor %}
+
   </div>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#ProfessionalCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" id="nextBtn" type="button" data-bs-target="#ProfessionalCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+
+  </div>
+  
 
   {% include spacer.html %}
   <h3 class="orange-font-color mb-3 col-md-4"> Educational </h3>
@@ -31,5 +82,55 @@ title: Projects
   {% include spacer.html %}
   <h3 class="orange-font-color mb-3 col-md-4"> Hobbyist </h3>
 
-  </div>
 </div>
+
+<script type="text/javascript">
+
+  window.onLoad = function() {
+    document.querySelector('.carousel-inner').scrollTo({
+      top:0,
+      left: 0,
+      behaviour: 'smooth'
+    })
+  }
+    if (window.matchMedia("(min-width: 800px)").matches) {
+      var carousel = document.getElementById("ProfessionalCarousel");
+      carousel.classList.remove('slide');
+    }
+
+      if (window.matchMedia("(min-width: 800px)").matches) {
+        var carouselWidth = document.getElementById('carouselInner').scrollWidth;
+        var cardWidth = document.querySelector('.carousel-item').offsetWidth;
+        var scrollPosition = 0;
+        document.querySelector('.carousel-control-next').onclick = function(){
+          console.log("next");
+          if(scrollPosition > (carouselWidth - (cardWidth * 3))){ return; }
+          
+          scrollPosition = scrollPosition + cardWidth;
+          document.querySelector('.carousel-inner').scrollTo({
+            top:0,
+            left: scrollPosition,
+            behaviour: 'smooth'
+          })
+          
+        };
+
+        document.querySelector('.carousel-control-prev').onclick = function(){
+          if(scrollPosition < (carouselWidth - (cardWidth * 3))){ return; }
+          scrollPosition = scrollPosition - cardWidth;
+          document.querySelector('.carousel-inner').scrollTo({
+            top:0,
+            left: scrollPosition,
+            behaviour: 'smooth'
+          })
+          
+        };
+  
+    }
+
+
+  
+
+
+
+</script>

@@ -36,8 +36,9 @@ title: Blog
 
 	{% include spacer.html %}
 
+	{% assign blog_posts = site.posts | where: "tag", "blog" %}
 
-	{% for post in site.posts %}
+	{% for post in blog_posts %}
 		<div class="container">
 			<a class= "row post-main-style p-3" href="{{ post.url }}">
 
