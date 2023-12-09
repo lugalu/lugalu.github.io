@@ -8,11 +8,13 @@
 <div class="row">
   <nav>
     {% for item in site.data.navigation %}
-      <a href="{{ item.link }}"
-        {% if page.url == item.link %} 
-          class = "active"
+      <a  href="{{ item.link }}"
+        {% if page.title == item.name %} 
+          class = "navigation-button orange-font-color  col"
+          {%else %}
+          class="navigation-button col"
         {% endif %}
-        class="navigation-button col" 
+         
       >
       {{ item.name }}
       </a>
