@@ -19,11 +19,18 @@ font-size: 18px;
     display: block;
     margin: 0;
     flex: 0 0 calc(100%/3);
+  
     
   }
   .active{
     padding-right: 0;
   }
+
+  .carousel-size {
+    
+    height: 200px;
+  }
+
 }
 
 </style>
@@ -36,7 +43,7 @@ font-size: 18px;
 
   {% include spacer.html %}
   <h3 class="orange-font-color mb-3 col-md-4"> Professional </h3>
-  {% assign tag = "project-professional"%}
+  {% assign tag = "project-Professional"%}
   {% include carousel.html tag = tag %}
 
 
