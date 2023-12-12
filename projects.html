@@ -36,41 +36,10 @@ font-size: 18px;
 
   {% include spacer.html %}
   <h3 class="orange-font-color mb-3 col-md-4"> Professional </h3>
-  {% assign project_posts = site.posts | where: "tag", "project" %}
-
-  <div id= "ProfessionalCarousel"class="carousel slide">
-    <div class="carousel-inner" id="carouselInner">
-      {% for post in project_posts %}
-        <div 
-        {% if forloop.first %}
-          class="carousel-item active"
-        {% else %}
-          class = "carousel-item"
-        {% endif %}
-        id = "carouselItem"
-        >
-            <div class="col mx-1">
-              <div class="card">
-                <img src="/assets/images/zeta.jpg" class="img-fluid h-100 card-img-top">
-                <div class="card-body">
-                  <p class="orange-font-color fs-1">alo</p>
-                </div>            
-              </div>
-            </div>
-        </div>
-      {% endfor %}
-
-  </div>
+  {% assign tag = "project-professional"%}
+  {% include carousel.html tag = tag %}
 
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#ProfessionalCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" id="nextBtn" type="button" data-bs-target="#ProfessionalCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
 
 
   </div>
@@ -78,59 +47,11 @@ font-size: 18px;
 
   {% include spacer.html %}
   <h3 class="orange-font-color mb-3 col-md-4"> Educational </h3>
+  {% assign tag = "project-Educational"%}
+  {% include carousel.html tag= tag %}
 
   {% include spacer.html %}
   <h3 class="orange-font-color mb-3 col-md-4"> Hobbyist </h3>
-
+  {% assign tag = "project-Hobbyist"%}
+  {% include carousel.html tag= tag %}
 </div>
-
-<script type="text/javascript">
-
-  window.onLoad = function() {
-    document.querySelector('.carousel-inner').scrollTo({
-      top:0,
-      left: 0,
-      behaviour: 'smooth'
-    })
-  }
-    if (window.matchMedia("(min-width: 800px)").matches) {
-      var carousel = document.getElementById("ProfessionalCarousel");
-      carousel.classList.remove('slide');
-    }
-
-      if (window.matchMedia("(min-width: 800px)").matches) {
-        var carouselWidth = document.getElementById('carouselInner').scrollWidth;
-        var cardWidth = document.querySelector('.carousel-item').offsetWidth;
-        var scrollPosition = 0;
-        document.querySelector('.carousel-control-next').onclick = function(){
-          console.log("next");
-          if(scrollPosition > (carouselWidth - (cardWidth * 3))){ return; }
-          
-          scrollPosition = scrollPosition + cardWidth;
-          document.querySelector('.carousel-inner').scrollTo({
-            top:0,
-            left: scrollPosition,
-            behaviour: 'smooth'
-          })
-          
-        };
-
-        document.querySelector('.carousel-control-prev').onclick = function(){
-          if(scrollPosition < (carouselWidth - (cardWidth * 3))){ return; }
-          scrollPosition = scrollPosition - cardWidth;
-          document.querySelector('.carousel-inner').scrollTo({
-            top:0,
-            left: scrollPosition,
-            behaviour: 'smooth'
-          })
-          
-        };
-  
-    }
-
-
-  
-
-
-
-</script>
