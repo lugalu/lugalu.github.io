@@ -1,12 +1,38 @@
 ---
 layout: default
+
 ---
 
-<h1> {{ page.title }} </h1>
+<style>
+
+	strong{
+		color: #FF7A00;
+	}
+
+
+	@media screen and (max-width: 800px){
+		.w-25{
+			width: 75% !important;
+		}
+
+		.w-50{
+			width: 100% !important;
+		}
+
+		.w-75{
+			width: 100% !important;
+		}
+	}
+
+</style>
+<div class="container justify-content-center mt-5 w-75 text-sm text-start fs-5 lh-base" markdown = "1">
+
+<h1> {{ page.postTitle }} </h1>
+
+<img src=>
 
 <p>
 	{{ page.date | date_to_string }}
-	{% assign author = site.authors | where: 'short_name', page.author | first %}
 	{% if author %}
 		- <a href="{{author.url}}">
 			{{ author.name }}
@@ -15,3 +41,6 @@ layout: default
 </p>
 
 {{ content }}
+
+
+</div>

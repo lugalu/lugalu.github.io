@@ -1,5 +1,4 @@
 ---
-author: ted
 tag: project
 ---
 Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the
