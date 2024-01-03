@@ -1,9 +1,12 @@
 
 {% assign project_posts = site.posts | where: "tag", tag %}
+{% assign carouselName = "Carousel_"| append: tag %}
+
+
 
 {% if project_posts != empty %}
-<div id= "ProfessionalCarousel" class="carousel slide h-100 carousel-size">
-  <div class="carousel-inner w-75 h-100" id="carouselInner">
+<div id="#{{carouselName}}" class="carousel  h-100 carousel-size" data-bs-touch = "true"  data-bs-interval= "false" data-bs-pause= "true" data-bs-wrap= "false" >
+  <div class="carousel-inner w-75 h-100 " id="carouselInner">
     {% for post in project_posts %}
       <a 
       {% if forloop.first %}
@@ -18,10 +21,10 @@
 
       >
           <div class="col mx-1">
-            <div class="card">
+            <div class="card bg-dark">
               <img src= {{ post.image | default: "/assets/images/zeta.jpg" }} class="img-fluid card-img-top carousel-size">
               <div class="card-body">
-                <p class="orange-font-color fs-1">{{ post.title | default: A oopsie has been made when creating this post}}</p>
+                <p class="text-light fs-1">{{ post.title | default: A oopsie has been made when creating this post}}</p>
               </div>            
             </div>
           </div>
@@ -29,39 +32,49 @@
     {% endfor %}
 
 </div>
- {% if project_posts > 3%}
-  <button class="carousel-control-prev" type="button" data-bs-target="#ProfessionalCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
+  {% if project_posts.size > 3 %}
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{carouselName}}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
 
-  <button class="carousel-control-next" id="nextBtn" type="button" data-bs-target="#ProfessionalCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-{% endif %}
+    <button class="carousel-control-next" id="nextBtn" type="button" data-bs-target="#{{carouselName}}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  {% endif %}
 
-<script type="text/javascript">
+</div>
 
-  window.onLoad = function() {
-    document.querySelector('.carousel-inner').scrollTo({
-      top:0,
-      left: 0,
-      behaviour: 'smooth'
-    })
-  }
-    if (window.matchMedia("(min-width: 800px)").matches) {
-      var carousel = document.getElementById("ProfessionalCarousel");
-      carousel.classList.remove('slide');
-    }
 
-      if (window.matchMedia("(min-width: 800px)").matches) {
+  <script type="text/javascript">
+
+    function documentLoaded(){
+        document.querySelector('.carousel-inner').scrollTo({
+        top:0,
+        left: 0,
+        behaviour: 'smooth'
+      })
+
+        if (window.matchMedia("(min-width: 900px)").matches) {
+          var carousel = document.getElementById("#{{carouselName}}");
+          // carousel.classList.remove('slide');
+
+        }
+
+     if (window.matchMedia("(min-width: 900px)").matches) {
         var carouselWidth = document.getElementById('carouselInner').scrollWidth;
         var cardWidth = document.querySelector('.carousel-item').offsetWidth;
         var scrollPosition = 0;
+
         document.querySelector('.carousel-control-next').onclick = function(){
-          console.log("next");
-          if(scrollPosition > (carouselWidth - (cardWidth * 3))){ return; }
+          var offsetWidth = 3;
+
+           if (!window.matchMedia("(min-width: 900px)").matches){
+            offsetWidth = 1;
+           }
+
+          if(scrollPosition > (carouselWidth - (cardWidth * offsetWidth))){ return; }
           
           scrollPosition = scrollPosition + cardWidth;
           document.querySelector('.carousel-inner').scrollTo({
@@ -73,7 +86,12 @@
         };
 
         document.querySelector('.carousel-control-prev').onclick = function(){
-          if(scrollPosition < (carouselWidth - (cardWidth * 3))){ return; }
+          var offsetWidth = 3;
+
+           if (!window.matchMedia("(min-width: 900px)").matches){
+            offsetWidth = 1;
+           }
+          if(scrollPosition < (carouselWidth - (cardWidth * offsetWidth))){ return; }
           scrollPosition = scrollPosition - cardWidth;
           document.querySelector('.carousel-inner').scrollTo({
             top:0,
@@ -82,9 +100,15 @@
           })
           
         };
-  
+    
+      }
     }
-</script>
+
+    document.addEventListener("DOMContentLoaded", documentLoaded);
+
+
+      
+  </script>
 {% else %}
   <h4>Nothing here Yet.</h4>
 

@@ -8,19 +8,24 @@ title: Projects
 padding-right: 0px;
 font-size: 18px;
 }
-@media screen and (min-width: 800px){
+
+.carousel-inner{
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  margin: auto;
+}
+
+@media screen and (min-width: 900px){
   .carousel-inner{
-    display: flex;
-    overflow:  scroll;
-    scroll-behavior: smooth;
+    overflow:  hidden;
   }
 
   .carousel-item{
     display: block;
     margin: 0;
     flex: 0 0 calc(100%/3);
-  
-    
+    margin: auto;
   }
 
   a{
@@ -28,9 +33,13 @@ font-size: 18px;
     text-decoration: none;
   }
 
-  .carousel-item:hover, a:hover{
-    text-decoration: underline;
+  a:hover{
     color: #FF7A00;
+    cursor: pointer;
+  }
+  .carousel-item:hover{
+    text-decoration: underline;
+    color: white;
     cursor: pointer;
   }
 
@@ -51,26 +60,23 @@ font-size: 18px;
 <div class="container mt-5">
   <div class="row align-items-center">
     <h2 class="orange-font-color mb-3 col-md-4"> Projects </h2>
-  </div>
-
+  
   {% include spacer.html %}
-  <h3 class="orange-font-color mb-3 col-md-4"> Professional </h3>
-  {% assign tag = "project-Professional"%}
+  <h3 class="mb-3 col-md-4"> Professional </h3>
+  {% assign tag = "Project-Professional"%}
   {% include carousel.html tag = tag %}
-
-
-
-
-  </div>
   
 
   {% include spacer.html %}
-  <h3 class="orange-font-color mb-3 col-md-4"> Educational </h3>
-  {% assign tag = "project-Educational"%}
+  <h3 class="mb-3 col-md-4"> Educational </h3>
+  {% assign tag = "Project-Educational"%}
   {% include carousel.html tag= tag %}
 
+
   {% include spacer.html %}
-  <h3 class="orange-font-color mb-3 col-md-4"> Hobbyist </h3>
-  {% assign tag = "project-Hobbyist"%}
+  <h3 class="mb-3 col-md-4"> Hobbyist </h3>
+  {% assign tag = "Project-Hobbyist"%}
   {% include carousel.html tag= tag %}
 </div>
+</div>
+
