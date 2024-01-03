@@ -6,7 +6,7 @@
 
 {% if project_posts != empty %}
 <div id="#{{carouselName}}" class="carousel  h-100 carousel-size" data-bs-touch = "true"  data-bs-interval= "false" data-bs-pause= "true" data-bs-wrap= "false" >
-  <div class="carousel-inner w-75 h-100 " id="carouselInner">
+  <div class="carousel-inner w-75 h-100 " id="carouselInner-{{carouselName}}">
     {% for post in project_posts %}
       <a 
       {% if forloop.first %}
@@ -33,12 +33,12 @@
 
 </div>
   {% if project_posts.size > 3 %}
-    <button class="carousel-control-prev" type="button" data-bs-target="#{{carouselName}}" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" id= "previous-{{carouselName}}" data-bs-target="#{{carouselName}}" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
 
-    <button class="carousel-control-next" id="nextBtn" type="button" data-bs-target="#{{carouselName}}" data-bs-slide="next">
+    <button class="carousel-control-next" id="next-{{carouselName}}" type="button" data-bs-target="#{{carouselName}}" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
@@ -50,34 +50,35 @@
   <script type="text/javascript">
 
     function documentLoaded(){
-        document.querySelector('.carousel-inner').scrollTo({
+        var carouselName = "{{carouselName}}"
+
+        document.getElementById('carouselInner-'.concat(carouselName)).scrollTo({
         top:0,
         left: 0,
         behaviour: 'smooth'
       })
 
         if (window.matchMedia("(min-width: 900px)").matches) {
-          var carousel = document.getElementById("#{{carouselName}}");
-          // carousel.classList.remove('slide');
+          var carousel = document.getElementById("#".concat(carouselName));
+          carousel.classList.remove('slide');
 
         }
 
      if (window.matchMedia("(min-width: 900px)").matches) {
-        var carouselWidth = document.getElementById('carouselInner').scrollWidth;
+        var count = {{project_posts.size}}
+        if (count <= 3) { return; }
+        var carouselWidth = document.getElementById('carouselInner-'.concat(carouselName)).scrollWidth;
         var cardWidth = document.querySelector('.carousel-item').offsetWidth;
         var scrollPosition = 0;
 
-        document.querySelector('.carousel-control-next').onclick = function(){
+
+        document.getElementById('next-'.concat(carouselName)).onclick = function() {
           var offsetWidth = 3;
 
-           if (!window.matchMedia("(min-width: 900px)").matches){
-            offsetWidth = 1;
-           }
-
-          if(scrollPosition > (carouselWidth - (cardWidth * offsetWidth))){ return; }
+          if( scrollPosition > (carouselWidth - (cardWidth * offsetWidth)) ){ return; }
           
           scrollPosition = scrollPosition + cardWidth;
-          document.querySelector('.carousel-inner').scrollTo({
+          document.getElementById('carouselInner-'.concat(carouselName)).scrollTo({
             top:0,
             left: scrollPosition,
             behaviour: 'smooth'
@@ -85,29 +86,56 @@
           
         };
 
-        document.querySelector('.carousel-control-prev').onclick = function(){
+        document.getElementById('previous-'.concat(carouselName)).onclick = function() {
           var offsetWidth = 3;
-
-           if (!window.matchMedia("(min-width: 900px)").matches){
-            offsetWidth = 1;
-           }
-          if(scrollPosition < (carouselWidth - (cardWidth * offsetWidth))){ return; }
-          scrollPosition = scrollPosition - cardWidth;
-          document.querySelector('.carousel-inner').scrollTo({
-            top:0,
-            left: scrollPosition,
-            behaviour: 'smooth'
-          })
+          if( scrollPosition > 0) {
+             scrollPosition = scrollPosition - cardWidth;
+            console.log("previous", scrollPosition);
+            document.getElementById('carouselInner-'.concat(carouselName)).scrollTo({
+              top:0,
+              left: scrollPosition,
+              behavior: 'smooth'
+            })
+          }
+          
           
         };
     
+      }else{
+        var count = {{project_posts.size}}
+        if (count <= 3) { return; }
+        
+        document.getElementById("next-".concat(carouselName)).onclick = function() {
+          console.log("next", myCarousel)
+          myCarousel.next();
+        }
+
+        document.getElementById('previous-'.concat(carouselName)).onclick = function() {
+          console.log("prev")
+          myCarousel.prev();
+        }
+
       }
+
+
+      //Carousel stop
+        var myCarousel = new bootstrap.Carousel(document.getElementById("#{{carouselName}}"), {
+        interval: 5000, // Set the desired auto-play interval in milliseconds (e.g., 5000 for 5 seconds)
+        pause: 'hover'
+      });
+        myCarousel.pause();
+
+
     }
 
     document.addEventListener("DOMContentLoaded", documentLoaded);
-
-
       
+
+    function goLeft(){
+
+
+    }
+
   </script>
 {% else %}
   <h4>Nothing here Yet.</h4>
