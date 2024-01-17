@@ -1,6 +1,7 @@
 collections:
   authors:
     output: true
+baseurl: "/"
 
 defaults:
   - scope:

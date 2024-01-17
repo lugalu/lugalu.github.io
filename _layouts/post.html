@@ -29,16 +29,6 @@ layout: default
 
 <h1> {{ page.postTitle }} </h1>
 
-<img src=>
-
-<p>
-	{{ page.date | date_to_string }}
-	{% if author %}
-		- <a href="{{author.url}}">
-			{{ author.name }}
-		</a>
-	{% endif %}
-</p>
 
 {{ content }}
 
