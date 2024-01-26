@@ -82,6 +82,14 @@ as you can see these are simple questions, but they make a difference when I wan
 *\*A caveat of being a coder is that a project has more content than the document itself like shown here:
 Don’t worry about the code is just an example.*
 
+<div class="row px-5 justify-content-md-center">
+<figure class="figure col-md-6">
+  <img src="/assets/images/LearningHowToLearn/Image-2.webp" class="figure-img img-fluid rounded-4" alt="...">
+  <figcaption class="figure-caption text-white text-center">Don’t worry about the code is just an example.</figcaption>
+</figure>
+</div>
+
+
 <br>
 
 but that doesn’t mean I cannot use **CBL** for other things, After learning it I use it for basically anything, I do not create a file for everything but the mindset is there and I can structure my thinking around how I’m accustomed to learning.
