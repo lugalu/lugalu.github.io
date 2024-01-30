@@ -2,27 +2,150 @@
 title: Resume
 ---
 
+<style>
 
-<div class="mt-3 text-center">
-	<select class="selectpicker" data-width="fit" id="languageSelector" onchange = "updateLink(this.selectedIndex)" >
-    	<option value=0 selected=true>English</option>
-  		<option value=1>Portugues</option>
-	</select>
+.accordion-button:not(.collapsed){
+	color: #FFFFFF;
+}
+
+.accordion-button:.collapsed{
+	color: #FFFFFF;
+}
+
+.accordion-button:focus{
+	border: none;
+	box-shadow: none;
+}
+
+.accordion{
+	border-bottom: #FF7A00;
+--bs-accordion-border-color:#FF7A00;
+--bs-accordion-btn-color: #FFFFFF;
+}
+
+</style>
+
+<div class="container justify-content-center mt-5 w-75 text-sm text-start fs-5 lh-base" markdown = 1>
+
+<h2 class="orange-font-color">Resume </h2>
+
+<br>
+
+<p>Here you can find a simplified version of my skills, abilities, experiences, and contacts.</p>
+
+
+<div class="accordion accordion-flush" id="accordionExample">
+
+  <div class="accordion-item text-light bg-transparent">
+    <h2 class="accordion-header bg-transparent bold">
+      <button class="accordion-button fw-bold fs-2 text bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#skills" aria-expanded="true" aria-controls="skills">
+        Skills
+      </button>
+    </h2>
+    <div id="skills" class="accordion-collapse collapse show bg-transparent" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+        	<li>Swift</li>
+        	<li>HIG (Human Interface Guidelines)</li>
+        	<li>SwiftUI / UIKit</li>
+        	<li>Core Data, Realm</li>
+        	<li>MVVM, MVC & VIPER</li>
+        	<li>CI/CD</li>
+        	<li>Unit Testing</li>
+        	<li>Git / Github</li>
+        	<li>SPM (Swift Package Manager)</li>
+        	<li>iCloud</li>
+        	<li>RX</li>
+        	<li>CocoaPods</li>
+        	<li>SnapKit</li>
+        	<li>Firebase</li>
+        	<li>API Rest / Alamofire</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item text-light bg-transparent">
+    <h2 class="accordion-header bg-transparent">
+      <button class="accordion-button fs-2 text fw-bold collapsed bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#Work" aria-expanded="false" aria-controls="Work">
+        Work Experience
+      </button>
+    </h2>
+    <div id="Work" class="accordion-collapse  collapse bg-transparent" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong> Apple Developer Academy</strong><br>
+        <p class="fs-6">Two Years - (Fev/2021 - Dec/2022)</p>
+        <ul class="fs-6">
+        	<li>Developed as a Team 5 apps from the concept to the published MVP</li>
+        	<li>Worked with multiple platforms: iPhone, iPad, and Apple Watch</li>
+        </ul>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item text-light bg-transparent">
+    <h2 class="accordion-header bg-transparent">
+      <button class="accordion-button fs-2 text fw-bold collapsed bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#Education" aria-expanded="false" aria-controls="Education">
+        Education & Certificates
+      </button>
+    </h2>
+    <div id="Education" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body bg-transparent">
+
+      	<strong>University Education</strong>
+      	<p class="fs-6">Computer Science Bachelor <br> Universidade Católica de Brasília - UCB</p>
+
+
+
+      	<strong>Practical Cloud Services Course Using Swift with Emphasis on IoT - Hackatruck, 2018</strong>
+      	<p class="fs-6">Utilizing an arduino, Node.js, the team created a sample iOS app that could track device usages via wifi.</p>
+     
+
+      </div>
+    </div>
+  </div>
+
+   <div class="accordion-item text-light bg-transparent">
+    <h2 class="accordion-header bg-transparent">
+      <button class="accordion-button fs-2 text fw-bold collapsed bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#Languages" aria-expanded="false" aria-controls="Languages">
+        Languages
+      </button>
+    </h2>
+    <div id="Languages" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+      <div class="accordion-body bg-transparent">
+        <ul>
+        	<li>Portuguese (Native)</li>
+        	<li>English (Advanced)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="accordion-item text-light bg-transparent">
+    <h2 class="accordion-header bg-transparent">
+      <button class="accordion-button fs-2 text fw-bold collapsed bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#Contacts" aria-expanded="false" aria-controls="Contacts">
+       	Contacts
+      </button>
+    </h2>
+    <div id="Contacts" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul class="orange-font-color">
+        	<li><a href="https://www.linkedin.com/in/lugalu/" class="orange-font-color"  target="_blank">linkedin</a></li>
+        	<li><a href="https://github.com/lugalu" class="orange-font-color"  target="_blank">github</a></li>
+        	<li><u>lugaludev@gmail.com</u></li>
+        </ul>
+
+        * I will answer any contact via email from my main one, I won't disclose it here for security reasons.
+      </div>
+    </div>
+  </div>
+
+
 </div>
 
-<div class="embed-responsive embed-responsive-16by9 text-center w-100 h-100 mt-3">
-	<iframe id="CVFrame" class="embed-responsive-item w-50 h-100 " src="https://drive.google.com/file/d/1xdvx7HDjoZLhBkz4XoPfFLAPls8LzaW2/preview" allowfullscreen></iframe>
+
+
 </div>
-
-
-<script type="text/javascript">
-	function updateLink(index) {
-		const driveLinks = [ 
-			"https://drive.google.com/file/d/1xdvx7HDjoZLhBkz4XoPfFLAPls8LzaW2/preview",
-			"https://drive.google.com/file/d/1saBpOPDIG7TLdUxBbnbCY-qgrHNB5Sww/preview"
-			];
-
-		var frame = document.getElementById("CVFrame");
-		frame.src = driveLinks[index];
-	}
-</script>
